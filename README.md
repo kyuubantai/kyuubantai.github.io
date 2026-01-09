@@ -1,2 +1,2 @@
-# kyuubantai.github.io
-Portfolio
+# Portfolio de KITA Djessy-Alberto alias kyuubantai
+blablabla
