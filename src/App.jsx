@@ -6,7 +6,7 @@ function App() {
       <div>
         <header className="hero-section">
         <h1>It's a pleasure to meet you !</h1>
-        <h2>I am KITA Djessy-Alberto [cite: 51]</h2>
+        <h2>I am KITA Djessy-Alberto</h2>
         <p className="subtitle">
           Student at Claude Bernard University Lyon 1  [cite: 81, 82] | C++/Python Developer
         </p>
