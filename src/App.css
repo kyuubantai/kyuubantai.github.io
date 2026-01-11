@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.navigation ul{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  align-items: center;
+}
+
+.navigation li{
+  margin: auto;
+  list-style: none;
+  padding: 10px;
+}
 
 .portfolio-container {
   max-width: 800px;
@@ -40,7 +52,47 @@ h2 {
   color: #555;
 }
 
+.info{
+  text-align: justify;
+  justify-content: space-around;
+  align-items: center;
+}
 .intro {
   font-size: 1.1rem;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:start;
+  color: white;
+}
+
+.exp{
+   font-size: 1.1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:start;
+  color: white;
+}
+
+.work{
+  font-size: 1.1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:start;
+  color: white;
+}
+
+.contact{
+  font-size: 1.1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:start;
+  color: white;
 }
