@@ -9,25 +9,23 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+        <header className="hero-section">
+        <h1>It's a pleasure to meet you !</h1>
+        <h2>I am KITA Djessy-Alberto [cite: 51]</h2>
+        <p className="subtitle">
+          Student at Claude Bernard University Lyon 1  [cite: 81, 82] | C++/Python Developer
         </p>
+      </header>
+      <section className="intro">
+        <p>
+          Passionné par l'Intelligence Artificielle et l'optimisation haute performance. 
+          Actuellement en recherche d'un stage de fin de licence pour intégrer un Master en IA.
+        </p>
+        <p>
+          <strong>Compétences clés :</strong> Maîtrise de l'Anglais (Niveau C1)  et développement de solutions logicielles robustes.
+        </p>
+      </section>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
