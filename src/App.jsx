@@ -6,10 +6,10 @@ function App() {
       <div>
         <nav className="navigation">
           <ul>
-            <li>About Me</li>
-            <li>Experiences</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#xp">Experiences</a></li>
+            <li><a href="#work">Projects</a></li>
+            <li><a href="#link">Contact</a></li>
             <li>Language</li>
           </ul>
         </nav>
@@ -21,7 +21,7 @@ function App() {
         </p>
       </header>
       <section className="info">
-        <article className="intro">
+        <article id="about" className="intro">
         <h1>About Me</h1>
         <p>
         Since little, i already have a thing with informatics, my mom said that when i was in kindergarten,
@@ -36,35 +36,34 @@ function App() {
         but amazing journey ? 
         </p>
         </article>
-        <article className = "exp">
+        <article id="xp" className = "exp">
           <h1>Skills/Experiences</h1>
-          <p>
+          <p>   
             <strong>Programming Languages :</strong> 
             <ul className="prog">
               <li>C++ : 4/5 </li>
               <li>Python : 4/5 </li>
               <li>C# : 4/5 </li>
               <li>Java : 3/5 </li>
-              <li>Javascript : 2/5 </li>
-              <li>PHP : 3/5</li>
-              <li>CSS : 4/5</li>
               <li>SQL: 4/5</li>
-              <li>HTML(i know, it's not a programming langage but whatever): 4/5 </li>
             </ul>
-            <strong>Other Programming Languages (Functional programming essentially)</strong>
+            <strong>Logic & Functional Programming</strong>
             <ul className="prog2">
               <li>Scheme:3/5</li>
               <li>Ocaml: 3/5</li>
               <li>Prolog: 2/5</li>
             </ul>
+            <strong>Web Technologies</strong>
+            <ul className="web">
+              <li>HTML/CSS :4/5 </li>
+              <li>PHP/Javascript : 3/5 </li>
+              <li>Node/React: 3/5</li>
+              <li>phpMyAdmin/MySQL: 4/5</li>
+            </ul>
             <strong>Tools</strong>
             <ul className="tool">
-              <li>Linux : 3/5</li>
+              <li>Linux(Debian) : 3/5</li>
               <li>Git:3/5</li>
-              <li>MySQL: 4/5</li>
-              <li>phpMyAdmin: 4/5</li>
-              <li>Node: 2/5</li>
-              <li>React: 2/5</li>
               <li>Unity:4/5</li>
             </ul>
             <strong>Soft skills</strong>
@@ -82,7 +81,7 @@ function App() {
             </ul>
           </p>
         </article>
-        <article className="work">
+        <article id="work" className="work">
           <h1>Projects</h1>
           <strong>Individual Projects</strong>
           <ul>
@@ -120,9 +119,9 @@ function App() {
             </li>
           </ul>
         </article>
-        <artcile className="contact">
+        <artcile id="link" className="contact">
           <h1>Contact</h1>
-          <a href="mailto:kitapro@outlook.com">Feel free to contact me !</a>  
+          <p>Feel free to contact me at : <a href="mailto:kitapro@outlook.com">kitapro@outlook.com</a></p>
         </artcile>
       </section>
       <footer className="bas">
