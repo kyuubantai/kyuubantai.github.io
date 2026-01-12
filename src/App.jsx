@@ -64,6 +64,25 @@ function App() {
                 {t.xp.webItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
               </ul>
             </div>
+
+            <div>
+              <strong>{t.xp.toolsTitle}</strong>
+              <ul>
+                {t.xp.toolsItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
+            <div>
+              <strong>{t.xp.softTitle}</strong>
+              <ul>
+                {t.xp.softItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
+            <div>
+              <strong>{t.xp.languageTitle}</strong>
+              <ul>
+                {t.xp.languageItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
           </div>
         </article>
 
