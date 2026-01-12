@@ -1,132 +1,112 @@
 import { useState } from 'react'
 import './App.css'
+import { translations } from './translations'
 
 function App() {
+  // On initialise l'état avec 'en' car c'est ton point fort (C1) 
+  const [lang, setLang] = useState('en');
+  const t = translations[lang];
+
   return (
-      <div>
-        <nav className="navigation">
-          <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#xp">Experiences</a></li>
-            <li><a href="#work">Projects</a></li>
-            <li><a href="#link">Contact</a></li>
-            <li>Language</li>
-          </ul>
-        </nav>
-        <header className="hero-section">
-        <h1>It's a pleasure to meet you !</h1>
-        <h2>I am KITA Djessy-Alberto</h2>
-        <p className="subtitle">
-          Student at Claude Bernard University Lyon 1 | C++/Python Developer
-        </p>
+    <div className="portfolio">
+      {/* 1. Navigation avec sélecteur de langue */}
+      <nav className="navigation">
+        <ul>
+          <li><a href="#about">{t.nav.about}</a></li>
+          <li><a href="#xp">{t.nav.xp}</a></li>
+          <li><a href="#work">{t.nav.work}</a></li>
+          <li><a href="#link">{t.nav.contact}</a></li>
+          <li className="lang-toggle">
+            <button onClick={() => setLang('en')} className={lang === 'en' ? 'active' : ''}>EN</button>
+            <button onClick={() => setLang('fr')} className={lang === 'fr' ? 'active' : ''}>FR</button>
+          </li>
+        </ul>
+      </nav>
+
+      {/* 2. Hero Section */}
+      <header className="hero-section">
+        <h1>{t.hero.title}</h1>
+        <h2>{t.hero.ageText}</h2> {/* [cite: 4] */}
+        <p className="subtitle">{t.hero.subtitle}</p>
       </header>
+
       <section className="info">
+        {/* 3. About Section */}
         <article id="about" className="intro">
-        <h1>About Me</h1>
-        <p>
-        Since little, i already have a thing with informatics, my mom said that when i was in kindergarten,
-        when others worked with PCs assigned to us, i was the only one who knew how to work from my teacher's computer station.
-        Later on, this passion was always with me everywhere, in sci-fi movies, books, videogames, Youtube videos or even what's actually
-        happening with ai and its big development.
-        <br></br>
-        Now, i want to be part of this story, gaining skills and experiences to one day, live in this sci-fi world
-        I've always dreamt of since little.
-        <br></br>
-        And if you share the same dream with me, why not walk together in this crazy
-        but amazing journey ? 
-        </p>
+          <h1>{t.about.title}</h1>
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+          <p>{t.about.p3}</p>
         </article>
-        <article id="xp" className = "exp">
-          <h1>Skills/Experiences</h1>
-          <p>   
-            <strong>Programming Languages :</strong> 
-            <ul className="prog">
-              <li>C++ : 4/5 </li>
-              <li>Python : 4/5 </li>
-              <li>C# : 4/5 </li>
-              <li>Java : 3/5 </li>
-              <li>SQL: 4/5</li>
-            </ul>
-            <strong>Logic & Functional Programming</strong>
-            <ul className="prog2">
-              <li>Scheme:3/5</li>
-              <li>Ocaml: 3/5</li>
-              <li>Prolog: 2/5</li>
-            </ul>
-            <strong>Web Technologies</strong>
-            <ul className="web">
-              <li>HTML/CSS :4/5 </li>
-              <li>PHP/Javascript : 3/5 </li>
-              <li>Node/React: 3/5</li>
-              <li>phpMyAdmin/MySQL: 4/5</li>
-            </ul>
-            <strong>Tools</strong>
-            <ul className="tool">
-              <li>Linux(Debian) : 3/5</li>
-              <li>Git:3/5</li>
-              <li>Unity:4/5</li>
-            </ul>
-            <strong>Soft skills</strong>
-            <ul className="soft">
-              <li>Communication: 5/5</li>
-              <li>Teamwork : 4/5</li>
-              <li>Autonomy : 4/5</li>
-              <li>Customer support : 5/5</li>
-            </ul>
-            <strong>Languages</strong>
-            <ul className="lang">
-              <li>French : 5/5 (native)</li>
-              <li>English : 5/5</li>
-              <li>Spanish : 2/5</li>
-            </ul>
-          </p>
+
+        {/* 4. Skills/Experience Section avec Mapping */}
+        <article id="xp" className="exp">
+          <h1>{t.xp.title}</h1>
+          
+          <div className="skills-grid">
+            <div>
+              <strong>{t.xp.progTitle}</strong>
+              <ul>
+                {t.xp.progItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
+
+            <div>
+              <strong>{t.xp.otherProgTitle}</strong>
+              <ul>
+                {t.xp.otherProgItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
+
+            <div>
+              <strong>{t.xp.webTitle}</strong>
+              <ul>
+                {t.xp.webItems.map((item, i) => <li key={i}>{item.name}: {item.score}</li>)}
+              </ul>
+            </div>
+          </div>
         </article>
+
+        {/* 5. Projects Section avec Filtrage */}
         <article id="work" className="work">
-          <h1>Projects</h1>
-          <strong>Individual Projects</strong>
-          <ul>
-            <li> 
-              <a href = 'https://github.com/kyuubantai/TAS-project'>TAS</a>
-              <p>A project built in C++/Python, i was inspired by a Youtube video on Super Mario bros's speedrun and 
-                how TAS helped the community to find new glitches and complete the run faster. So i thought why not create one that
-                can help humanity with the same spirit !</p>
-                <strong>Status : Work in progress</strong>
-              </li>
-          </ul>
-          <strong>Contributions in Group/Business Projects</strong>
-          <ul>
-            <li>
-              <a href='https://github.com/Tutur699/projetam2espbelkit'>Prison Escape(School Project)</a>
-              <p>A video game in Unity where players are prisonners or cops and the goal is to escape for one side or capture prisonners for the other side.
-                The purpose of this project was to create an AI enemy and perform the Turing test to the players.
-              </p>
-              <br></br>
-              <strong>My Contribution :</strong>
-              <p>Inventory for the items and AI enemy</p>
-              <strong>Status : Unfinished</strong>
-              </li>
-              <br></br>
-            <li><a href='https://github.com/NumCaps69/ProjetJavaSmallWorld'>SmallWorld(School Project)</a>
-            <p>A game built in Java based on the board game called : "SmallWorld"</p>
-            <strong>My Contribution :</strong>
-            <p>Loop core for the game and counting points</p>
-            </li>
-            <li><a href = 'https://github.com/kyuubantai/l-antagoniste'>L'Antagoniste(School Project)</a>
-            <p>A turn based video game in C++ </p>
-            <strong>My Contribution :</strong>
-            <p>Combat System</p>
-            <strong>Status : Unfinished</strong>
-            </li>
-          </ul>
+          <h1>{t.work.title}</h1>
+          
+          <h3>{t.work.indivTitle}</h3>
+          <div className="projects-list">
+            {t.work.projects.filter(p => p.isIndividual).map(p => (
+              <div key={p.id} className="project-card">
+                <a href={p.link} target="_blank" rel="noreferrer"><strong>{p.name}</strong></a>
+                <p>{p.description}</p>
+                <small>Tech: {p.tech} | <em>{p.status}</em></small>
+              </div>
+            ))}
+          </div>
+
+          <h3>{t.work.groupTitle}</h3>
+          <div className="projects-list">
+            {t.work.projects.filter(p => !p.isIndividual).map(p => (
+              <div key={p.id} className="project-card">
+                <a href={p.link} target="_blank" rel="noreferrer"><strong>{p.name}</strong></a>
+                <p>{p.description}</p>
+                <p><strong>Contribution:</strong> {p.contribution}</p>
+                <small>Tech: {p.tech} | <em>{p.status}</em></small>
+              </div>
+            ))}
+          </div>
         </article>
-        <artcile id="link" className="contact">
-          <h1>Contact</h1>
-          <p>Feel free to contact me at : <a href="mailto:kitapro@outlook.com">kitapro@outlook.com</a></p>
-        </artcile>
+
+        {/* 6. Contact Section */}
+        <article id="link" className="contact">
+          <h1>{t.contact.title}</h1>
+          <p>{t.contact.p}</p>
+          <a href={`mailto:${t.contact.link}`} className="btn-email">{t.contact.link}</a> {/*  */}
+        </article>
       </section>
+
       <footer className="bas">
+        <p>© 2026 KITA Djessy-Alberto - Built with React & Vite</p>
       </footer>
-      </div>
+    </div>
   )
 }
 
