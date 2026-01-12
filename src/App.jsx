@@ -13,7 +13,7 @@ function App() {
     const form = e.target;
     const data = new FormData(form);
 
-    const response = await fetch("https://formspree.io/f/VOTRE_ID_FORMSPREE", {
+    const response = await fetch("https://formspree.io/f/xvzzorlp", {
       method: "POST",
       body: data,
       headers: {
