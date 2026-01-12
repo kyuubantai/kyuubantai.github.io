@@ -1,9 +1,9 @@
 /* --- 1. Variables et Bases --- */
 :root {
-  --shinigami-black: #121212;
+  --shinigami-black: #242323;
   --card-bg: #1a1a1a;
   --ink-white: #e0e0e0;
-  --division-9-accent: #4a5dca; /* Bleu Indigo */
+  --division-9-accent: #614aca; 
   --text-muted: #a0a0a0;
   --border-color: #333;
 }
@@ -37,6 +37,13 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
   border-bottom: 2px solid var(--division-9-accent);
+}
+
+.reseaux{
+    display:flex;
+    flex-direction: column;
+    width: 55px;
+    margin: 20px;
 }
 
 .navigation ul {

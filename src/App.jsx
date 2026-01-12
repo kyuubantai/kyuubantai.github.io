@@ -59,6 +59,14 @@ function App() {
           <button onClick={() => setLang('fr') + setIsMenuOpen(false)} className={lang === 'fr' ? 'active' : ''}>FR</button>
         </li>
       </ul>
+      <div className="réseaux">
+        <a href='https://github.com/kyuubantai'>
+         <img src='data/github-mark-white.svg'></img>
+        </a>
+        <a href='www.linkedin.com/in/djessy-alberto-kita-15269b2a7'>
+        <img src='data/InBug-White.png'></img>
+        </a>
+      </div>
     </nav>
 
       {/* 2. Hero Section */}
@@ -176,7 +184,7 @@ function App() {
       </form>
 
       <p className="alternative-contact">
-        Email direct : <a href={`mailto:${t.contact.link}`}>{t.contact.link}</a>
+        Mail : <a href={`mailto:${t.contact.link}`}>{t.contact.link}</a>
       </p>
     </article>
       </section>
