@@ -250,3 +250,143 @@ h2 {
 .exp { animation-delay: 0.6s; }
 .work { animation-delay: 0.8s; }
 .contact { animation-delay: 1s; }
+
+/* --- Media Queries pour Mobiles (écrans < 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Ajustement de la Navigation */
+  .navigation ul {
+    flex-direction: column; /* On empile les menus */
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navigation li {
+    margin: 5px 0;
+  }
+
+  /* 2. Hero Section : On réduit les textes pour qu'ils ne sortent pas de l'écran */
+  .hero-section {
+    padding: 120px 20px 40px 20px; /* Plus d'espace en haut pour la nav empilée */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Plus petit sur mobile */
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  /* 3. Ajustement des sections et paddings */
+  .info {
+    padding: 0 15px;
+  }
+
+  .intro, .exp, .work, .contact {
+    padding: 2rem 0;
+    align-items: center; /* On centre le texte sur mobile pour un meilleur rendu */
+    text-align: center;
+  }
+
+  /* 4. Grilles : On force l'affichage sur une seule colonne */
+  .skills-grid, .projects-list {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+
+  /* 5. Formulaire de contact : Pleine largeur obligatoire */
+  .contact-form {
+    width: 100%;
+  }
+
+  /* Correction visuelle pour le textarea qui dépassait */
+  .contact-form input, 
+  .contact-form textarea {
+    font-size: 16px; /* Évite le zoom automatique forcé sur iPhone */
+  }
+
+  .btn-submit {
+    align-self: center; /* On centre le bouton sur mobile */
+    width: 100%; /* Plus facile à cliquer avec le pouce */
+  }
+}
+
+
+/* --- Style du bouton Hamburger --- */
+.hamburger {
+  width: 30px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001; /* Pour rester au-dessus du menu */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--division-9-accent); /* Ton bleu indigo */
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Animation vers la Croix (Open) --- */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0; /* La ligne du milieu disparaît */
+  transform: translateX(-20px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* On n'affiche le hamburger que sur mobile */
+@media (max-width: 768px) {
+  /* 1. On cache les liens par défaut avec une transition */
+  .nav-links {
+    display: flex; /* On garde le flex pour l'alignement */
+    flex-direction: column;
+    position: absolute;
+    top: 0px; /* Juste en dessous de la barre nav */
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.98);
+    border-bottom: 2px solid var(--division-9-accent);
+    
+    /* L'effet de glissement */
+    max-height: 0; /* Menu fermé = hauteur nulle */
+    overflow: hidden; /* On cache ce qui dépasse */
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  /* 2. Quand le menu est actif (isMenuOpen est true) */
+  .nav-links.active {
+    max-height: 500px; /* Une valeur assez grande pour contenir tes 5 liens */
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  .navigation li {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* On s'assure que le bouton hamburger est bien visible */
+  .hamburger {
+    display: flex;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    z-index: 1001;
+  }
+}

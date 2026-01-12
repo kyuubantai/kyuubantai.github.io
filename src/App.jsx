@@ -6,6 +6,7 @@ function App() {
   // On initialise l'état avec 'en' car c'est ton point fort (C1) 
   const [lang, setLang] = useState('en');
   const [status, setStatus] = useState(""); // État pour le message Formspree
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = translations[lang];
 
   const handleSubmit = async (e) => {
@@ -29,21 +30,36 @@ function App() {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+
   return (
     <div className="portfolio">
       {/* 1. Navigation avec sélecteur de langue */}
       <nav className="navigation">
-        <ul>
-          <li><a href="#about">{t.nav.about}</a></li>
-          <li><a href="#xp">{t.nav.xp}</a></li>
-          <li><a href="#work">{t.nav.work}</a></li>
-          <li><a href="#link">{t.nav.contact}</a></li>
-          <li className="lang-toggle">
-            <button onClick={() => setLang('en')} className={lang === 'en' ? 'active' : ''}>EN</button>
-            <button onClick={() => setLang('fr')} className={lang === 'fr' ? 'active' : ''}>FR</button>
-          </li>
-        </ul>
-      </nav>
+      {/* Bouton Hamburger pour mobile */}
+      <div className="menu-icon" onClick={toggleMenu}>
+        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      {/* On ajoute la classe 'active' si le menu est ouvert */}
+      <ul className={isMenuOpen ? "nav-links active" : "nav-links"}>
+        <li><a href="#about" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</a></li>
+        <li><a href="#xp" onClick={() => setIsMenuOpen(false)}>{t.nav.xp}</a></li>
+        <li><a href="#work" onClick={() => setIsMenuOpen(false)}>{t.nav.work}</a></li>
+        <li><a href="#link" onClick={() => setIsMenuOpen(false)}>{t.nav.contact}</a></li>
+        <li className="lang-toggle">
+          <button onClick={() => setLang('en') + setIsMenuOpen(false)} className={lang === 'en' ? 'active' : ''}>EN</button>
+          <button onClick={() => setLang('fr') + setIsMenuOpen(false)} className={lang === 'fr' ? 'active' : ''}>FR</button>
+        </li>
+      </ul>
+    </nav>
 
       {/* 2. Hero Section */}
       <header className="hero-section">
