@@ -100,10 +100,15 @@ export const translations = {
         }
       ]
     },
-    contact :{
-        title:"Contact",
-        p:"Feel free to contact me by mail or via social networks !",
-        link: "kitapro@outlook.com",
+    contact: {
+      title: "Contact",
+      p: "Feel free to contact me for any opportunities or questions!",
+      emailLabel: "Your Email",
+      messageLabel: "Your Message",
+      send: "Send Message",
+      success: "Thanks! Your message has been sent.",
+      error: "Opps! There was a problem submitting your form.",
+      link: "kitapro@outlook.com"
     }
   },
 
@@ -208,10 +213,15 @@ export const translations = {
         }
       ]
     },
-    contact :{
-        title:"Contact",
-        p:"N'hésitez pas à me contacter par mail ou via mes réseaux!",
-        link: "kitapro@outlook.com",
+    contact: {
+      title: "Contact",
+      p: "N'hésitez pas à me contacter pour toute opportunité ou questions !",
+      emailLabel: "Votre Email: ",
+      messageLabel: "Votre Message: ",
+      send: "Envoyer le message",
+      success: "Merci ! Votre message a bien été envoyé.",
+      error: "Oups ! Un problème est survenu lors de l'envoi.",
+      link: "kitapro@outlook.com"
     }
   }
 };
