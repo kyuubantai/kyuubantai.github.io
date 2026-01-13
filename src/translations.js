@@ -3,7 +3,7 @@ export const translations = {
     nav: { about: "About Me", xp: "Experiences", work: "Projects", contact: "Contact" },
     hero: { 
         title: "It's a pleasure to meet you !", 
-        ageText: "I am KITA Djessy-Alberto, 21 years old",
+        ageText: "I am Djessy, 21 years old",
         subtitle: "Student at Claude Bernard University Lyon 1 | C++/Python Developer" },
     about: {
       title: "About Me",
@@ -116,7 +116,7 @@ export const translations = {
     nav: { about: "À propos", xp: "Expériences", work: "Projets", contact: "Contact" },
     hero: { 
         title: "Ravi de faire votre connaissance !",
-        ageText: "Je suis KITA Djessy-Alberto, 21 ans",
+        ageText: "Je suis Djessy, 21 ans",
         subtitle: "Étudiant à l'Université Lyon 1 | Développeur C++/Python" },
     about: {
       title: "À propos de moi",

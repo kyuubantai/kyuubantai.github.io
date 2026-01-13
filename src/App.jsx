@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { translations } from './translations'
+import githubLogo from './assets/github-mark-white.svg'
+import linkedinLogo from './assets/InBug-White.png'
 
 function App() {
   // On initialise l'état avec 'en' car c'est ton point fort (C1) 
@@ -60,11 +62,11 @@ function App() {
         </li>
       </ul>
       <div className="réseaux">
-        <a href='https://github.com/kyuubantai'>
-         <img src='data/github-mark-white.svg'></img>
+        <a href='https://github.com/kyuubantai' target="_blank" rel="noreferrer">
+          <img src={githubLogo} alt="GitHub" />
         </a>
-        <a href='www.linkedin.com/in/djessy-alberto-kita-15269b2a7'>
-        <img src='data/InBug-White.png'></img>
+        <a href='https://www.linkedin.com/in/djessy-alberto-kita-15269b2a7' target="_blank" rel="noreferrer">
+        <img src={linkedinLogo} alt="LinkedIn" />
         </a>
       </div>
     </nav>
@@ -189,8 +191,15 @@ function App() {
     </article>
       </section>
 
-      <footer className="bas">
-        <p>© 2026 KITA Djessy-Alberto - Built with React & Vite</p>
+      <footer className="footer-kyuubantai">
+        <hr className="footer-line"/>
+          <div className="footer-content">
+            <p>© 2026 Made by Djessy(Kaname)</p>
+            <div className="footer-socials">
+              <a href="https://github.com/kyuubantai" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/djessy-alberto-kita-15269b2a7" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
       </footer>
     </div>
   )
