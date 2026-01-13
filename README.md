@@ -11,6 +11,7 @@ Welcome to my professional portfolio repository! I am a 21-year-old student at *
 * **Framework:** React 18 (Vite)
 * **Deployment:** GitHub Pages
 * **Form Handling:** Formspree API
+* CSS
 
 ## ⚙️ How to run locally
 
