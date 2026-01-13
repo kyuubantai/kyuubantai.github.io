@@ -102,7 +102,7 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      p: "Feel free to contact me for any opportunities or questions!",
+      p: "Feel free to contact me for any opportunities or questions !",
       emailLabel: "Your Email",
       messageLabel: "Your Message",
       send: "Send Message",
