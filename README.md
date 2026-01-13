@@ -6,7 +6,7 @@ Welcome to my professional portfolio repository! I am a 21-year-old student at *
 
 ---
 
-## Tech Used
+## Tech Stack
 
 * **Framework:** React 18 (Vite)
 * **Deployment:** GitHub Pages
