@@ -5,9 +5,8 @@ import githubLogo from './assets/github-mark-white.svg'
 import linkedinLogo from './assets/InBug-White.png'
 
 function App() {
-  // On initialise l'état avec 'en' car c'est ton point fort (C1) 
   const [lang, setLang] = useState('en');
-  const [status, setStatus] = useState(""); // État pour le message Formspree
+  const [status, setStatus] = useState(""); // Formspree
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = translations[lang];
 
@@ -39,9 +38,8 @@ function App() {
 
   return (
     <div className="portfolio">
-      {/* 1. Navigation avec sélecteur de langue */}
+      {/* 1. Navigation */}
       <nav className="navigation">
-      {/* Bouton Hamburger pour mobile */}
       <div className="menu-icon" onClick={toggleMenu}>
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span></span>
@@ -50,7 +48,6 @@ function App() {
         </div>
       </div>
 
-      {/* On ajoute la classe 'active' si le menu est ouvert */}
       <ul className={isMenuOpen ? "nav-links active" : "nav-links"}>
         <li><a href="#about" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</a></li>
         <li><a href="#xp" onClick={() => setIsMenuOpen(false)}>{t.nav.xp}</a></li>
@@ -71,10 +68,10 @@ function App() {
       </div>
     </nav>
 
-      {/* 2. Hero Section */}
+      {/* 2. Title Section */}
       <header className="hero-section">
         <h1>{t.hero.title}</h1>
-        <h2>{t.hero.ageText}</h2> {/* [cite: 4] */}
+        <h2>{t.hero.ageText}</h2>
         <p className="subtitle">{t.hero.subtitle}</p>
       </header>
 
@@ -87,7 +84,7 @@ function App() {
           <p>{t.about.p3}</p>
         </article>
 
-        {/* 4. Skills/Experience Section avec Mapping */}
+        {/* 4. Skills/Experience Section */}
         <article id="xp" className="exp">
           <h1>{t.xp.title}</h1>
           
@@ -134,7 +131,7 @@ function App() {
           </div>
         </article>
 
-        {/* 5. Projects Section avec Filtrage */}
+        {/* 5. Projects Section */}
         <article id="work" className="work">
           <h1>{t.work.title}</h1>
           
@@ -180,7 +177,6 @@ function App() {
 
         <button type="submit" className="btn-submit">{t.contact.send}</button>
 
-        {/* Affichage des messages de statut */}
         {status === "SUCCESS" && <p className="status-msg success">{t.contact.success}</p>}
         {status === "ERROR" && <p className="status-msg error">{t.contact.error}</p>}
       </form>

@@ -1,4 +1,4 @@
-/* --- 1. Variables et Bases --- */
+/* --- Var and Bases --- */
 :root {
   --shinigami-black: #242323;
   --card-bg: #1a1a1a;
@@ -27,14 +27,14 @@ body {
   text-align: center;
 }
 
-/* --- 2. Navigation (Fixe & Centrée) --- */
+/* --- Navigation --- */
 .navigation {
   display: flex;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Plus simple que 80% pour éviter les décalages */
+  width: 100%; 
   background: rgba(18, 18, 18, 0.95);
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
@@ -49,10 +49,10 @@ body {
 }
 
 .réseaux img {
-  width: 24px; /* Taille idéale pour une barre nav */
+  width: 24px;
   height: 24px;
   transition: opacity 0.3s, transform 0.3s;
-  filter: brightness(0) invert(1); /* Force les icônes en blanc si elles sont noires */
+  filter: brightness(0) invert(1);
 }
 
 .réseaux img:hover {
@@ -84,10 +84,10 @@ body {
   color: var(--division-9-accent);
 }
 
-/* --- 3. Hero Section (Transition vers le sombre) --- */
+/* --- Title Section  --- */
 .hero-section {
   text-align: center;
-  padding: 8rem 0 4rem 0; /* Plus de padding en haut à cause de la nav fixe */
+  padding: 8rem 0 4rem 0;
   background: linear-gradient(180deg, #1a1a1a 0%, var(--shinigami-black) 100%);
   border-radius: 0 0 50px 50px;
   margin-bottom: 3rem;
@@ -109,7 +109,7 @@ h2 {
   color: var(--text-muted);
 }
 
-/* --- 4. Sections de Contenu --- */
+/* --- All Content Sections --- */
 .info {
   max-width: 900px;
   margin: 0 auto;
@@ -120,11 +120,11 @@ h2 {
   padding: 4rem 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligné à gauche pour la lecture */
+  align-items: flex-start; 
   border-bottom: 1px solid var(--border-color);
 }
 
-/* --- 5. Skills Grid --- */
+/* --- Skills Grid --- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -138,7 +138,7 @@ h2 {
   color: var(--text-muted);
 }
 
-/* --- 6. Project Cards --- */
+/* --- Project Cards --- */
 .projects-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -183,7 +183,7 @@ h2 {
   font-size: 0.8rem;
 }
 
-/* --- 7. Formulaire de Contact (Correction du décalage) --- */
+/* --- Contact --- */
 .contact-form {
   width: 100%;
   max-width: 600px;
@@ -203,7 +203,7 @@ h2 {
 .contact-form input, 
 .contact-form textarea {
   width: 100%;
-  box-sizing: border-box; /* Crucial pour l'alignement */
+  box-sizing: border-box;
   background: #1a1a1a;
   border: 1px solid var(--border-color);
   border-radius: 6px;
@@ -228,7 +228,7 @@ h2 {
   opacity: 0.8;
 }
 
-/* --- 8. Lang Toggle --- */
+/* --- Lang Toggle --- */
 .lang-toggle button {
   background: transparent;
   border: 1px solid var(--division-9-accent);
@@ -243,41 +243,39 @@ h2 {
   background: var(--division-9-accent);
 }
 
-/* --- Définition de l'animation --- */
+/* --- Animation --- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px); /* L'élément part de 30px plus bas */
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* L'élément arrive à sa place réelle */
+    transform: translateY(0);
   }
 }
 
-/* --- Application de l'animation --- */
 .hero-section, 
 .intro, 
 .exp, 
 .work, 
 .contact {
-  opacity: 0; /* Caché au départ */
-  animation: fadeInUp 0.8s ease-out forwards; /* 'forwards' garde l'élément visible à la fin */
+  opacity: 0; 
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* --- Décalage pour un effet "cascade" --- */
 .hero-section { animation-delay: 0.2s; }
 .intro { animation-delay: 0.4s; }
 .exp { animation-delay: 0.6s; }
 .work { animation-delay: 0.8s; }
 .contact { animation-delay: 1s; }
 
-/* --- Media Queries pour Mobiles (écrans < 768px) --- */
+/* --- Media Queries for Mobiles (écrans < 768px) --- */
 @media (max-width: 768px) {
   
-  /* 1. Ajustement de la Navigation */
+  /* --- Navigation --- */
   .navigation ul {
-    flex-direction: column; /* On empile les menus */
+    flex-direction: column;
     gap: 10px;
     padding: 10px 0;
   }
@@ -286,55 +284,54 @@ h2 {
     margin: 5px 0;
   }
 
-  /* 2. Hero Section : On réduit les textes pour qu'ils ne sortent pas de l'écran */
+  /* --- Hero Section --- */
   .hero-section {
-    padding: 120px 20px 40px 20px; /* Plus d'espace en haut pour la nav empilée */
+    padding: 120px 20px 40px 20px;
   }
 
   h1 {
-    font-size: 1.8rem; /* Plus petit sur mobile */
+    font-size: 1.8rem; 
   }
 
   h2 {
     font-size: 1.4rem;
   }
 
-  /* 3. Ajustement des sections et paddings */
+  /* --- All Content Sections --- */
   .info {
     padding: 0 15px;
   }
 
   .intro, .exp, .work, .contact {
     padding: 2rem 0;
-    align-items: center; /* On centre le texte sur mobile pour un meilleur rendu */
+    align-items: center; 
     text-align: center;
   }
 
-  /* 4. Grilles : On force l'affichage sur une seule colonne */
+  /* --- Skills Grids --- */
   .skills-grid, .projects-list {
     grid-template-columns: 1fr; 
     gap: 15px;
   }
 
-  /* 5. Formulaire de contact : Pleine largeur obligatoire */
+  /* --- Contact --- */
   .contact-form {
     width: 100%;
   }
 
-  /* Correction visuelle pour le textarea qui dépassait */
   .contact-form input, 
   .contact-form textarea {
-    font-size: 16px; /* Évite le zoom automatique forcé sur iPhone */
+    font-size: 16px;
   }
 
   .btn-submit {
-    align-self: center; /* On centre le bouton sur mobile */
-    width: 100%; /* Plus facile à cliquer avec le pouce */
+    align-self: center; 
+    width: 100%;
   }
 }
 
 
-/* --- Style du bouton Hamburger --- */
+/* --- Hamburger button --- */
 .hamburger {
   width: 30px;
   height: 20px;
@@ -342,25 +339,25 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1001; /* Pour rester au-dessus du menu */
+  z-index: 1001;
 }
 
 .hamburger span {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: var(--division-9-accent); /* Ton bleu indigo */
+  background-color: var(--division-9-accent);
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
 }
 
-/* --- Animation vers la Croix (Open) --- */
+/* --- Animation --- */
 .hamburger.open span:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
-  opacity: 0; /* La ligne du milieu disparaît */
+  opacity: 0;
   transform: translateX(-20px);
 }
 
@@ -368,38 +365,34 @@ h2 {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
-/* MOBILE*/
+/* --- MOBILE --- */
 @media (max-width: 768px) {
   .réseaux {
-    margin-left: 0; /* On annule le décalage à droite sur mobile */
+    margin-left: 0;
     margin-top: 20px;
     justify-content: center;
     width: 100%;
   }
 
-  /* 1. On cache les liens par défaut avec une transition */
   .nav-links {
-    display: flex; /* On garde le flex pour l'alignement */
+    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0px; /* Juste en dessous de la barre nav */
+    top: 0px;
     left: 0;
     width: 100%;
     background: rgba(18, 18, 18, 0.98);
     border-bottom: 2px solid var(--division-9-accent);
     
-    /* L'effet de glissement */
-    max-height: 0; /* Menu fermé = hauteur nulle */
-    overflow: hidden; /* On cache ce qui dépasse */
+    max-height: 0; 
+    overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
     z-index: 999;
   }
 
-  /* 2. Quand le menu est actif (isMenuOpen est true) */
   .nav-links.active {
-    max-height: 500px; /* Une valeur assez grande pour contenir tes 5 liens */
-    opacity: 1;
+    max-height: 500px; 
     padding: 20px 0;
   }
 
@@ -409,7 +402,6 @@ h2 {
     text-align: center;
   }
 
-  /* On s'assure que le bouton hamburger est bien visible */
   .hamburger {
     display: flex;
     position: absolute;
