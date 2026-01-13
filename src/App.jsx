@@ -194,7 +194,7 @@ function App() {
       <footer className="footer-kyuubantai">
         <hr className="footer-line"/>
           <div className="footer-content">
-            <p>© 2026 Made by Djessy(Kaname)</p>
+            <p>© 2026 Made by Djessy (Kaname)</p>
             <div className="footer-socials">
               <a href="https://github.com/kyuubantai" target="_blank" rel="noreferrer">GitHub</a>
               <a href="https://www.linkedin.com/in/djessy-alberto-kita-15269b2a7" target="_blank" rel="noreferrer">LinkedIn</a>
