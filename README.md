@@ -2,7 +2,7 @@
 
 Welcome to my professional portfolio repository! I am a 21-year-old student at **Claude Bernard University Lyon 1**, currently pursuing a Bachelor's degree in Computer Science.
 ## Live Demo
-**Check out the live site here:** [kyuubantai.github.io](https://kyuubantai.github.io)
+**Check out the live site here:** [kyuubantai.github.io](https://kyuubantai.github.io/Portfolio)
 
 ---
 
